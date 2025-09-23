@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* small helper so overlay text looks great on video */
+.hero-overlay {
+  /* not necessary — tailwind classes cover it */
+}
