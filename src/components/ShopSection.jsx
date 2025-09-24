@@ -72,9 +72,23 @@ export default function ShopSection() {
         {displayed.map((p) => (
           <div key={p.id} className="flex flex-col items-center text-center">
             {/* Frame with right-side shadow only */}
-            <div className="p-1.5 bg-gradient-to-br from-gray-500 to-gray-900 shadow-[12px_12px_24px_rgba(0,0,0,0.5)]">
-              <img src={p.image} alt={p.title} className="w-full h-80 object-cover border-8 border-white" />
-            </div>
+             <div class="max-w-lg mx-auto bg-gray-600 p-1
+             border-gray-700 border-[6px]
+            shadow-[2px_4px_16px_rgba(0,0,0,0.5),0_1px_3px_rgba(0,0,0,0.15)]
+            ">
+
+  <div
+  className="bg-white p-6 
+             shadow-[-2px_-2px_24px_rgba(0,0,0,0.1),inset_6px_6px_10px_rgba(0,0,0,0.3)]"
+>
+
+    <img
+      src={p.image}
+      alt={p.title}
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
 
             {/* Painting Info */}
             <div className="mt-6">

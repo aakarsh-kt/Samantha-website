@@ -43,29 +43,41 @@ export default function CarouselSection() {
             {PAINTINGS.map((p) => (
               <SwiperSlide key={p.id}>
                 <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                  {/* Frame wrapper with fixed ratio */}
+             
                   <div className="relative w-full aspect-[4/5] flex items-center justify-center ">
-                    {/* Matte black frame + white border */}
+              
                     <div className=" m-4 flex flex-col items-center">
-                        <div className="p-1.5 bg-gradient-to-br from-gray-500 to-gray-900 shadow-[12px_12px_24px_rgba(0,0,0,0.5)] max-w-[90%] max-h-[90%]">
-                          <div className="border-8 border-white h-full w-full">
-                            <img
-                              src={p.image}
-                              alt={p.title}
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        
-                        </div>
-                        <div className="mt-4 text-center">
-                            <h3 className="font-semibold text-lg">{p.title}</h3>
-                                                  <p className="text-sm text-gray-500">
-                            {p.year} • {p.size}
-                                                  </p>
-                                                  <p className="mt-2 font-bold text-pink-600">{p.price}</p>
-                        </div>
+                        <div class="max-w-lg mx-auto bg-gray-600 p-1
+             border-gray-700 border-[6px]
+            shadow-[2px_4px_12px_rgba(0,0,0,0.5),0_1px_3px_rgba(0,0,0,0.15)]
+            ">
+
+  <div
+  className="bg-white p-6 
+             shadow-[-6px_-6px_24px_rgba(0,0,0,0.6),inset_6px_6px_10px_rgba(0,0,0,0.3)]"
+>
+
+    <img
+      src={p.image}
+      alt={p.title}
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
+                  
+
+
+                      <div className="mt-4 text-center">
+                        <h3 className="font-semibold text-lg">{p.title}</h3>
+                        <p className="text-sm text-gray-500">
+                          {p.year} • {p.size}
+                        </p>
+                        <p className="mt-2 font-bold text-pink-600">
+                          {p.price}
+                        </p>
+                      </div>
                     </div>
-                    
+
                     {/* Sold overlay */}
                     {p.status === "sold" && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/40">
