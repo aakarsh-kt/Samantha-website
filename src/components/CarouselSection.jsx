@@ -47,7 +47,7 @@ export default function CarouselSection() {
                   <div className="relative w-full aspect-[4/5] flex items-center justify-center ">
                     {/* Matte black frame + white border */}
                     <div className=" m-4 flex flex-col items-center">
-                        <div className="p-2 bg-gradient-to-br from-gray-900 to-black shadow-[6px_6px_12px_rgba(0,0,0,0.4)] max-w-[90%] max-h-[90%]">
+                        <div className="p-1.5 bg-gradient-to-br from-gray-500 to-gray-900 shadow-[12px_12px_24px_rgba(0,0,0,0.5)] max-w-[90%] max-h-[90%]">
                           <div className="border-8 border-white h-full w-full">
                             <img
                               src={p.image}
