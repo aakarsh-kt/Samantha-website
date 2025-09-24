@@ -4,3 +4,11 @@
 .hero-overlay {
   /* not necessary — tailwind classes cover it */
 }
+.custom-pagination .swiper-pagination-bullet {
+  background: #d1d5db; /* Tailwind gray-300 */
+  opacity: 1;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #ec4899; /* Tailwind pink-500 */
+}

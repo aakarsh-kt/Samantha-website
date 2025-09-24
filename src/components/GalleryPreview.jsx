@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function GalleryPreview() {
-  const thumbs = ["/images/painting1.jpg", "/images/painting2.jpg", "/images/painting5.jpg"];
+  const thumbs = ["/images/Picture1.jpg", "/images/Picture2.jpg", "/images/Picture11.jpg"];
   return (
     <div>
       <h3 className="text-2xl font-semibold mb-6">Gallery Preview</h3>

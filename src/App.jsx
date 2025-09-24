@@ -7,7 +7,7 @@ import ShopSection from "./components/ShopSection";
 import CommissionModal from "./components/CommissionModal";
 import GalleryPreview from "./components/GalleryPreview";
 import Footer from "./components/Footer";
-
+import CarouselSection from "./components/CarouselSection";
 export default function App() {
   // simple scroll Y to orchestrate stages
   const [scrollY, setScrollY] = useState(0);
@@ -39,9 +39,11 @@ export default function App() {
 
         {/* After quote, Samantha painting image */}
         <section id="intro-painting" className="min-h-screen flex items-center justify-center bg-white">
-          <IntroPainting />
+            <IntroPainting />
+
         </section>
 
+            <CarouselSection />
         {/* Shop / Paintings preview */}
         <section id="shop" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">

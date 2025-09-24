@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-const PAINTINGS = [
+export const PAINTINGS = [
   { id: 1, title: "I've Found It", year: 2022, price: "£769", size: "100 × 100 cm", status: "available", image: "/images/Picture1.jpg" },
   { id: 2, title: "Bliss", year: 2019, price: "—", size: "50 × 50 cm", status: "sold", image: "/images/Picture2.jpg" },
   { id: 3, title: "Kourtney", year: 2019, price: "—", size: "29.7 × 42 cm", status: "sold", image: "/images/Picture3.jpg" },
@@ -34,70 +32,3 @@ const PAINTINGS = [
   { id:31, title: "Stonewall Riots (27 Jun 1969)", year: 2022, price: "£959", size: "120 × 120 cm", status: "available", image: "/images/Picture31.jpg" },
   { id:32, title: "Sarah Everard (12 Mar 2021)", year: 2022, price: "£1,049", size: "120 × 120 cm", status: "available", image: "/images/Picture32.jpg" },
 ];
-
-
-
-export default function ShopSection() {
-  const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
-  const displayed = showOnlyAvailable ? PAINTINGS.filter(p => p.status === "available") : PAINTINGS;
-
-  return (
-    <section className="bg-white py-16 px-6">
-      {/* Toggle Buttons */}
-      <div className="flex items-center justify-between mb-12">
-        <div>
-          <button
-            onClick={() => setShowOnlyAvailable(false)}
-            className={`px-5 py-2 rounded-md mr-3 ${!showOnlyAvailable ? "bg-pink-500 text-white shadow" : "bg-gray-100 border"}`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setShowOnlyAvailable(true)}
-            className={`px-5 py-2 rounded-md ${showOnlyAvailable ? "bg-pink-500 text-white shadow" : "bg-gray-100 border"}`}
-          >
-            Available
-          </button>
-        </div>
-        <button
-          onClick={() => document.getElementById("gallery-preview")?.scrollIntoView({ behavior: "smooth" })}
-          className="px-5 py-2 bg-gray-100 border rounded-md shadow-sm hover:bg-gray-200"
-        >
-          View Full Gallery
-        </button>
-      </div>
-
-      {/* Paintings Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-        {displayed.map((p) => (
-          <div key={p.id} className="flex flex-col items-center text-center">
-            {/* Frame with right-side shadow only */}
-            <div className="p-1.5 bg-gradient-to-br from-gray-500 to-gray-900 shadow-[12px_12px_24px_rgba(0,0,0,0.5)]">
-              <img src={p.image} alt={p.title} className="w-full h-80 object-cover border-8 border-white" />
-            </div>
-
-            {/* Painting Info */}
-            <div className="mt-6">
-              <h4 className="text-lg font-semibold">{p.title}</h4>
-              <p className="text-gray-600">{p.year} • {p.size}</p>
-              <p className="mt-1 text-pink-600 font-bold">{p.price}</p>
-              {p.status === "sold" && (
-                <span className="mt-2 inline-block text-sm text-red-600 font-bold">SOLD</span>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* CTA Button */}
-      <div className="mt-16 text-center">
-        <button
-          onClick={() => { setShowOnlyAvailable(true); document.getElementById("shop")?.scrollIntoView({ behavior: "smooth" }); }}
-          className="px-8 py-3 bg-pink-600 text-white rounded-md shadow-lg hover:scale-105 transform transition"
-        >
-          Shop Now
-        </button>
-      </div>
-    </section>
-  );
-}
